@@ -7,6 +7,7 @@ import (
 	"strings"
 )
 
+// go run dup3.go a b
 func main() {
 	counts := make(map[string]int)
 	for _, fname := range os.Args[1:] {
@@ -16,7 +17,7 @@ func main() {
 			continue
 		}
 		for _, line := range strings.Split(string(data), "\n") {
-            line = fname + " " + line
+			line = fname + " " + line
 			counts[line]++
 		}
 	}
