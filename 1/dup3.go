@@ -16,9 +16,12 @@ func main() {
 			continue
 		}
 		for _, line := range strings.Split(string(data), "\n") {
+            line = fname + " " + line
 			counts[line]++
 		}
 	}
+
+	fmt.Printf("#\tfile\tline\n")
 	for line, n := range counts {
 		if n > 1 {
 			fmt.Printf("%d\t%s\n", n, line)
